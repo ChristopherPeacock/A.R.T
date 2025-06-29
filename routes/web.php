@@ -7,6 +7,14 @@ use Inertia\Inertia;
 
 Route::get('/', [pageController::class,'index'])->name('home');
 
+Route::get('/crm', function () {
+    return Inertia::render('Crm');
+})->middleware(['auth', 'verified'])->name('crm');
+
+Route::get('/editpages', function () {
+    return Inertia::render('EditPages');
+})->middleware(['auth', 'verified'])->name('editpages');
+
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

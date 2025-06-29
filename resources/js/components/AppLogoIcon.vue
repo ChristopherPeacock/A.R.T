@@ -22,7 +22,7 @@ defineProps<Props>();
         <!-- /> -->
     <!-- </svg> -->
 
-    <div class="w-8 h-8 bg-gradient-to-r from-green-600 to-green-600 rounded-lg flex items-center justify-center">
-        <span class="text-white font-bold text-sm">I</span>
+     <div class="w-8 h-8 bg-gradient-to-r from-green-600 to-green-600  flex items-center justify-center">
+        <span class="text-white font-bold text-sm"></span>
     </div>
 </template>
