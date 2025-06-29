@@ -3,6 +3,7 @@
 use App\Http\Controllers\pageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Team;
 
 
 Route::get('/', [pageController::class,'index'])->name('home');
@@ -12,7 +13,12 @@ Route::get('/crm', function () {
 })->middleware(['auth', 'verified'])->name('crm');
 
 Route::get('/editpages', function () {
-    return Inertia::render('EditPages');
+
+    $teams = Team::where('id', 1)->first();
+
+    return Inertia::render('EditPages', [
+        'teamName' => $teams->name
+    ]);
 })->middleware(['auth', 'verified'])->name('editpages');
 
 Route::get('dashboard', function () {
