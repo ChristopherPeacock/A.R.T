@@ -26,6 +26,12 @@ const toggleBackgroundColorPicker = () => {
    backgroundColorPicker.value = !backgroundColorPicker.value;
 };
 
+const restart = () => {
+    backgroundColorGradient1.value = '#708090';
+    backgroundColorGradient2.value = '#2F4F4F';
+    backgroundColorGradient3.value = '#000000';
+};
+
 </script>
 
 <template>
@@ -51,26 +57,17 @@ const toggleBackgroundColorPicker = () => {
             </div>
 
             <!-- Action Buttons -->
-            <div class="nav-actions">
-                <button class="btn-primary">Publish</button>
+            <div class="nav-actions flex items-center space-x-2 m-auto">
+                <button class="btn-secondary">Publish</button>
 
-                <button class="btn-secondary">Discard</button>
+                <button class="btn-secondary" @click="restart">Discard</button>
 
                 <button class="btn-secondary" @click="toggleBackgroundColorPicker">background</button>
 
-                <button class="btn-secondary">Title</button>
+                <button class="btn-secondary" >Title</button>
 
                 <button class="btn-secondary">CTA</button>
 
-                <button class="btn-secondary">Files</button>
-
-                <button class="btn-secondary">Preview</button>
-
-                <button class="btn-secondary">View</button>
-
-                <button class="btn-secondary">Files</button>
-
-                <button class="btn-secondary">Preview</button>
             </div>
         </div>
     </div>
@@ -78,6 +75,15 @@ const toggleBackgroundColorPicker = () => {
         <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
             <div class="flex items-center space-x-4">
                 <input type="color" v-model="backgroundColorGradient1" class="w-16 h-8 rounded-lg border border-gray-300 dark:border-gray-600" />
+                <p>{{ backgroundColorGradient1 }}</p>
+            </div>
+             <div class="flex items-center space-x-4">
+                <input type="color" v-model="backgroundColorGradient2" class="w-16 h-8 rounded-lg border border-gray-300 dark:border-gray-600" />
+                <p>{{ backgroundColorGradient2}}</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <input type="color" v-model="backgroundColorGradient3" class="w-16 h-8 rounded-lg border border-gray-300 dark:border-gray-600" />
+                <p>{{ backgroundColorGradient3}}</p>
             </div>
         </nav>
     </div>
