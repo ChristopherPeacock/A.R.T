@@ -16,15 +16,12 @@ const mainNavItems: NavItem[] = [
     },
     {
         title: 'CRM',
-        href: '/crm',
         icon: BookOpen,
     },
     {
         title: 'Edit pages',
-        href: '/edit-pages',
         icon: Pencil,
     },
-
 
 ];
 
