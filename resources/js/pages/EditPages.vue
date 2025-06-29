@@ -11,18 +11,81 @@ import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
 import PlaceholderPattern from '../components/PlaceholderPattern.vue';
 import AppLogo from '@/components/AppLogo.vue';
+import { ref } from 'vue';
 
 const props = defineProps({
     teamName: String
 });
+
+const backgroundColorPicker = ref(false);
+const backgroundColorGradient1 = ref('#708090');
+const backgroundColorGradient2 = ref('#2F4F4F');
+const backgroundColorGradient3 = ref('#000000');
+
+const toggleBackgroundColorPicker = () => {
+   backgroundColorPicker.value = !backgroundColorPicker.value;
+};
 
 </script>
 
 <template>
   <Head title="Edit Pages" />
 
+
   <AppLayout>
-    <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-black transition-all duration-500">
+    <div class="navbar ">
+    <div class="nav-container">
+        <!-- Brand/Logo -->
+
+        <!-- Navigation Tabs -->
+        <div class="nav-tabs scroll-x">
+            <button
+            v-for="tab in tabs"
+            :key="tab.id"
+            :class="['nav-tab', { active: activeTab === tab.id }]"
+            @click="setActiveTab(tab.id)"
+            >
+                <i :class="tab.icon"></i>
+                    <span>{{ tab.label }}</span>
+                </button>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="nav-actions">
+                <button class="btn-primary">Publish</button>
+
+                <button class="btn-secondary">Discard</button>
+
+                <button class="btn-secondary" @click="toggleBackgroundColorPicker">background</button>
+
+                <button class="btn-secondary">Title</button>
+
+                <button class="btn-secondary">CTA</button>
+
+                <button class="btn-secondary">Files</button>
+
+                <button class="btn-secondary">Preview</button>
+
+                <button class="btn-secondary">View</button>
+
+                <button class="btn-secondary">Files</button>
+
+                <button class="btn-secondary">Preview</button>
+            </div>
+        </div>
+    </div>
+    <div class="border-b border-gray-200 dark:border-gray-700" v-if="backgroundColorPicker">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <input type="color" v-model="backgroundColorGradient1" class="w-16 h-8 rounded-lg border border-gray-300 dark:border-gray-600" />
+            </div>
+        </nav>
+    </div>
+    <div
+  class="min-h-screen transition-all duration-500"
+  :style="`background: linear-gradient(to bottom right, ${backgroundColorGradient1}, ${backgroundColorGradient2}, ${backgroundColorGradient3})`"
+>
+
         <!-- Header -->
         <header class="relative z-50 w-full">
             <div class="container mx-auto px-6 py-4">
@@ -153,3 +216,162 @@ const props = defineProps({
     </div>
   </AppLayout>
 </template>
+
+<style scoped>
+.navbar {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #00f5ff, #00c9ff);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 0.5rem;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  font-size: 0.9rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-tab::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-tab:hover::before {
+  opacity: 1;
+}
+
+.nav-tab:hover {
+  color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.nav-tab.active {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tab.active::before {
+  opacity: 0;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn-secondary, .btn-primary {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ff11, #4dff00);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(0, 255, 72, 0.4);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-tabs {
+    order: 2;
+    flex-wrap: wrap;
+  }
+
+  .nav-actions {
+    order: 3;
+  }
+}
+</style>
