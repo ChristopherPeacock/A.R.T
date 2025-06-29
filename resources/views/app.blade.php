@@ -7,6 +7,23 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+         <title>Invenode - Advanced Risk Management & Business Resilience Platform | Interconnected Risk Solutions</title>
+        <meta name="description" content="Transform your risk management with Invenode's interconnected platform. Map dependencies, identify hidden vulnerabilities, and build resilient operations. Free demo available.">
+        <meta name="keywords" content="risk management software, business continuity platform, operational resilience, risk assessment tools, dependency mapping, interconnected risk management">
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Invenode - Advanced Risk Management & Business Resilience Platform">
+        <meta property="og:description" content="Discover hidden risks through interconnected dependency mapping. Build true operational resilience with Invenode's advanced risk management platform.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://invenode.com">
+        <meta property="og:image" content="https://invenode.com/images/og-image.jpg">
+
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Invenode - Advanced Risk Management Platform">
+        <meta name="twitter:description" content="Transform risk management with interconnected dependency mapping and advanced resilience planning.">
+
+
+
         {{-- Inline script to detect system dark mode preference and apply it immediately --}}
         <script>
             (function() {
@@ -21,6 +38,31 @@
                 }
             })();
         </script>
+
+        {{-- <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Invenode",
+            "description": "Advanced risk management and business resilience platform with interconnected dependency mapping",
+            "url": "https://invenode.com",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based",
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "GBP",
+                "availability": "https://schema.org/InStock"
+            },
+            "provider": {
+                "@type": "Organization",
+                "name": "Invenode",
+            "url": "https://invenode.com"
+            }
+        }
+        </script> --}}
+
+         <!-- Canonical URL -->
+        <link rel="canonical" href="https://invenode.com">
 
         {{-- Inline style to set the HTML background color based on our theme in app.css --}}
         <style>
