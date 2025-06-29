@@ -12,40 +12,6 @@ import { Head } from '@inertiajs/vue3';
 import PlaceholderPattern from '../components/PlaceholderPattern.vue';
 import AppLogo from '@/components/AppLogo.vue';
 
-
-
-// const mainNavItems: NavItem[] = [
-//     {
-//         title: 'Dashboard',
-//         href: '/dashboard',
-//         icon: LayoutGrid,
-//     },
-//     {
-//         title: 'CRM',
-//         href: '/crm',
-//         icon: BookOpen,
-//     },
-//     {
-//         title: 'Edit pages',
-//         href: '/editpages',
-//         icon: Pencil,
-//     },
-
-// ];
-
-const footerNavItems: NavItem[] = [
-   {
-        title: 'Post Hog',
-        href: 'https://posthog.com/',
-        icon: Binoculars,
-    },
-    //{
-        //title: 'Documentation',
-        //href: 'https://laravel.com/docs/starter-kits#vue',
-        //icon: BookOpen,
-    //},
-];
-
 </script>
 
 <template>
