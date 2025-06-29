@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EditPageController;
 use App\Http\Controllers\pageController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -12,14 +13,7 @@ Route::get('/crm', function () {
     return Inertia::render('Crm');
 })->middleware(['auth', 'verified'])->name('crm');
 
-Route::get('/editpages', function () {
-
-    $teams = Team::where('id', 1)->first();
-
-    return Inertia::render('EditPages', [
-        'teamName' => $teams->name
-    ]);
-})->middleware(['auth', 'verified'])->name('editpages');
+Route::get('/editpages', [EditPageController::class, 'index'])->middleware(['auth', 'verified'])->name('editpages');
 
 Route::get('dashboard', function () {
     return Inertia::render('Dashboard');

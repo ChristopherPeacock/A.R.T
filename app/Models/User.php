@@ -52,4 +52,9 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Team::class);
     }
+
+    public function editPages()
+    {
+        return $this->hasMany(EditPage::class);
+    }
 }
