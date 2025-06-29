@@ -5,6 +5,7 @@ import NavBar from '@/Components/navBar/NavBar.vue';
 import Hero from '@/Components/welcome/Hero.vue';
 import WhyChoseUs from '@/Components/welcome/WhyChoseUs.vue';
 import Benefits from '@/Components/welcome/Benefits.vue';
+import FinalCallToAction from '@/Components/welcome/FinalCallToAction.vue';
 
 const props = defineProps({
     teamName: {
@@ -15,8 +16,8 @@ const props = defineProps({
 const isDark = ref(false);
 
 onMounted(() => {
-    isDark.value = document.documentElement.classList.contains('light') ||
-                   localStorage.getItem('theme') === 'light'
+    isDark.value = document.documentElement.classList.contains('dark') ||
+                   localStorage.getItem('theme') === 'dark'
 
     if (isDark.value) {
         document.documentElement.classList.add('dark')
@@ -25,7 +26,7 @@ onMounted(() => {
 
 function toggleDarkMode() {
     isDark.value = !isDark.value
-    document.documentElement.classList.toggle('light', isDark.value)
+    document.documentElement.classList.toggle('dark', isDark.value)
     localStorage.setItem('theme', isDark.value ? 'dark' : 'light')
 }
 
@@ -42,5 +43,6 @@ function toggleDarkMode() {
          <Hero />
          <Benefits />
          <WhyChoseUs />
+         <FinalCallToAction />
     </div>
 </template>
