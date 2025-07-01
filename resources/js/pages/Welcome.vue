@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Head, Link, } from '@inertiajs/vue3';
 import { ref, onMounted } from 'vue';
-import NavBar from '@/Components/navBar/NavBar.vue';
-import Hero from '@/Components/welcome/Hero.vue';
-import WhyChoseUs from '@/Components/welcome/WhyChoseUs.vue';
-import Benefits from '@/Components/welcome/Benefits.vue';
-import FinalCallToAction from '@/Components/welcome/FinalCallToAction.vue';
-import Support from '@/Components/welcome/Support.vue';
+import NavBar from '@/components/navBar/NavBar.vue';
+import Hero from '@/components/welcome/Hero.vue';
+import WhyChoseUs from '@/components/welcome/WhyChoseUs.vue';
+import Benefits from '@/components/welcome/Benefits.vue';
+import FinalCallToAction from '@/components/welcome/FinalCallToAction.vue';
+import Support from '@/components/welcome/Support.vue';
 
 const props = defineProps({
     teamName: {
