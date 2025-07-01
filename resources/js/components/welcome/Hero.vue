@@ -153,8 +153,6 @@ import { ref } from 'vue';
             background: linear-gradient(135deg, #0f172a 0%, #101620  50%, #334155 100%);
         }
 
-
-
         .primary-btn-hover:hover {
             transform: translateY(-2px) scale(1.02);
             box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
