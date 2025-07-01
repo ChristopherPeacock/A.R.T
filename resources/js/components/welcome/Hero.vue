@@ -39,9 +39,9 @@ import { ref } from 'vue';
 
                     <!-- CTA Buttons -->
                      <div class="hero-buttons flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <a href="/trial"
+                    <a href="/contact"
                        class="primary-btn group relative px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-2xl text-lg transition-all duration-300 primary-btn-hover animate-glow animate-slide-left hover:from-green-400 hover:to-green-500 focus:outline-none focus:ring-4 focus:ring-green-500/50"
-                       title="Start Free 30-Day Trial">
+                       title="Start Risk Managment Trial">
                         <span class="relative z-10 flex items-center gap-3">
                             Start Now
                             <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,16 +52,16 @@ import { ref } from 'vue';
                         <div class="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></div>
                     </a>
 
-                    <a href="/contact"
-                       class="secondary-btn group px-8 py-4 glass-effect text-white font-semibold rounded-2xl text-lg transition-all duration-300 secondary-btn-hover animate-slide-right hover:text-green-400 focus:outline-none focus:ring-4 focus:ring-white/20"
-                       title="Talk to Risk Management Expert">
-                        <span class="flex items-center gap-3">
+                    <!-- <a href="/contact"
+                       class="secondary-btn ring-2 group px-8 py-4 glass-effect text-white font-semibold rounded-2xl text-lg transition-all duration-300 secondary-btn-hover animate-slide-right hover:text-green-400 focus:outline-none focus:ring-5 focus:ring-white/20 light: ring-green-500/50"
+                       title="Talk to Risk Managment Expert">
+                        <span class="flex items-center gap-3 light: text-green-500">
                             <svg class="w-5 h-5 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                             </svg>
                             Talk to Expert
                         </span>
-                    </a>
+                    </a> -->
                 </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@ import { ref } from 'vue';
 
         .secondary-btn-hover:hover {
             transform: translateY(-2px) scale(1.02);
-            background: rgba(255, 255, 255, 0.15);
+             box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
         }
 
         .text-gradient {
