@@ -9,6 +9,10 @@ use App\Models\Team;
 
 Route::get('/', [pageController::class,'index'])->name('home');
 
+Route::get('/contact', function () {
+    dd('lets go!');
+});
+
 Route::get('/crm', function () {
     return Inertia::render('Crm');
 })->middleware(['auth', 'verified'])->name('crm');

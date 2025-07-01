@@ -22,7 +22,6 @@ Forget juggling multiple tools like notion, wordpress and getting locked into on
 - **Modern UI:** Tailwind CSS and Vue.js power a smooth, responsive interface.  
 - **Dark Mode:** Easy on the eyes for those long startup nights.  
 
-
 ---
 
 ## Features
@@ -84,7 +83,14 @@ Forget juggling multiple tools like notion, wordpress and getting locked into on
 8. Open up the application on http:://127.0.0.1:8000
 
 
-
+## How to keep a high SEO score through app consustanctly 
+- Use ancher tags inline not using javascript.
+    - Best for SEO.
+    - Googlebot crawls and indexes these naturally.
+    - Helps with PageRank flow (how authority passes through links).
+    - Allows right-click > open in new tab — user-friendly.
+    - Works even with JS disabled — more resilient.
+    - Contributes to semantic structure of your site (Google understands site architecture better).
 
     
 

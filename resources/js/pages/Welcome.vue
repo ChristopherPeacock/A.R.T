@@ -6,6 +6,7 @@ import Hero from '@/Components/welcome/Hero.vue';
 import WhyChoseUs from '@/Components/welcome/WhyChoseUs.vue';
 import Benefits from '@/Components/welcome/Benefits.vue';
 import FinalCallToAction from '@/Components/welcome/FinalCallToAction.vue';
+import Support from '@/Components/welcome/Support.vue';
 
 const props = defineProps({
     teamName: {
@@ -44,5 +45,7 @@ function toggleDarkMode() {
          <Benefits />
          <WhyChoseUs />
          <FinalCallToAction />
+         <Support />
     </div>
 </template>
+
