@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Team;
 use Inertia\Inertia;
+use Response;
 
 class pageController extends Controller
 {
@@ -18,7 +19,6 @@ class pageController extends Controller
     {
         $team = Team::where('id', 1)->first();
         $teamName = $team ? $team->name : 'Default Team';
-        
         return Inertia::render('Welcome', [
         'teamName' => $teamName,
         ]);
@@ -68,6 +68,11 @@ class pageController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
+    {
+        //
+    }
+
+    public function api()
     {
         //
     }

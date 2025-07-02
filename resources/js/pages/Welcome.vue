@@ -12,6 +12,9 @@ const props = defineProps({
     teamName: {
         type: String,
     },
+    maps: {
+        type: String,
+    }
 });
 
 const isDark = ref(false);
@@ -39,12 +42,12 @@ function toggleDarkMode() {
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     </Head>
 
-    <div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-slate-900 transition-all duration-500">
+    <div class=" flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-slate-900 transition-all duration-500">
          <NavBar :teamName="props.teamName" @toggleDarkMode="toggleDarkMode" :isDark="isDark" />
          <Hero />
          <Benefits />
          <WhyChoseUs />
-         <FinalCallToAction />
+         <FinalCallToAction  />
          <Support />
     </div>
 </template>
