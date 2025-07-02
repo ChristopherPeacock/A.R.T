@@ -22,17 +22,13 @@ const prev = () => {
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-500">
+  <div class="flex flex-col items-center justify-center h-[1000px]  p-8 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-all duration-500">
     <h1 class="text-4xl font-bold mb-8">Invenode's Community</h1>
 
     <div class="relative w-full max-w-xl">
       <!-- Carousel Item -->
       <div class="flex flex-col items-center p-6 border rounded-2xl shadow-lg bg-white dark:bg-gray-800 transition-all duration-500">
-        <img
-          :src="communityMembers[currentIndex].image" 
-          :alt="communityMembers[currentIndex].name"
-          class="w-32 h-32 object-cover rounded-full mb-4"
-        />
+
         <h2 class="text-2xl font-semibold">{{ communityMembers[currentIndex].name }}</h2>
         <p class="text-gray-600 dark:text-gray-300">{{ communityMembers[currentIndex].role }}</p>
       </div>

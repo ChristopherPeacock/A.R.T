@@ -1,17 +1,30 @@
 <template>
-  <section class="cta-section" id="cta-section">
-    <div class="container">
-      <h2 class="cta-title">Ready to Transform Your Risk Management?</h2>
-      <p class="cta-subtitle">
-        Join organizations using <span class="highlight">Invenode</span> to build resilient operations. Start your free trial today.
+  <section id="cta-section" class="py-12 light: bg-gray-900 h-96">
+    <div class="container mx-auto text-center max-w-3xl px-4 py-6">
+      <h2 class="cta-title text-3xl font-extrabold mb-4">
+        Ready to Transform Your Risk Management?
+      </h2>
+      <p class="cta-subtitle text-lg mb-8">
+        Join organizations using <span class="highlight font-semibold text-blue-600">Invenode</span> to build resilient operations.
       </p>
-      <div class="cta-buttons">
-        <a href="/trial" class="btn btn-primary" title="Start Free Trial">Start Free Trial</a>
-        <a href="/contact" class="btn btn-secondary" title="Contact an Expert">Contact an Expert</a>
+      <div class="cta-buttons flex justify-center gap-4">
+        <a href="/trial" title="Start Free Trial" class="btn btn-primary px-6 py-3 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition">
+          Start Free Trial
+        </a>
+        <a href="/contact" title="Contact an Expert" class="btn btn-secondary px-6 py-3 rounded-md bg-gray-300 text-gray-800 hover:bg-gray-400 transition">
+          Contact an Expert
+        </a>
       </div>
     </div>
+    <section class="mt-25">
+    <div class="light: text-white dark: text-grey-900">
+        <p>This will be traveling across the page.</p>
+    </div>
   </section>
+  </section>
+
 </template>
+
 
 <script setup>
 // No JavaScript needed for this simple CTA
@@ -24,6 +37,7 @@
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #1f2937;
+  margin: auto;
 }
 
 .cta-title {
