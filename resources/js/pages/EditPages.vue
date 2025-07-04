@@ -1,17 +1,16 @@
 <script setup lang="ts">
-import NavFooter from '@/components/NavFooter.vue';
-import NavMain from '@/components/NavMain.vue';
-import NavUser from '@/components/NavUser.vue';
-import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
-import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { Binoculars, Pencil, Apple, BookOpen, Folder, LayoutGrid } from 'lucide-vue-next';
 import AppLayout from '@/layouts/AppLayout.vue';
-import { type BreadcrumbItem } from '@/types';
 import { Head } from '@inertiajs/vue3';
-import PlaceholderPattern from '../components/PlaceholderPattern.vue';
-import AppLogo from '@/components/AppLogo.vue';
 import { ref } from 'vue';
+import { type BreadcrumbItem } from '@/types';
+
+const breadcrumbs: BreadcrumbItem[] = [
+    {
+        title: 'Page Editor',
+        href: '/Edit Pages',
+    },
+];
 
 const props = defineProps({
     teamName: String
@@ -36,9 +35,7 @@ const restart = () => {
 
 <template>
   <Head title="Edit Pages" />
-
-
-  <AppLayout>
+  <AppLayout :breadcrumbs="breadcrumbs">
     <div class="navbar ">
     <div class="nav-container">
         <!-- Brand/Logo -->

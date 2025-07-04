@@ -5,7 +5,7 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { Binoculars, Pencil, Apple, BookOpen, Folder, LayoutGrid } from 'lucide-vue-next';
+import { Binoculars, Pencil, Apple, BookOpen, Folder, LayoutGrid, BookOpenText, Inbox, MessageCircle, FolderClosed, CalendarDays, Notebook } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -24,7 +24,36 @@ const mainNavItems: NavItem[] = [
         href: '/editpages',
         icon: Pencil,
     },
-
+    {
+        title: 'Blogs',
+        href: '/blogs',
+        icon: BookOpenText
+    },
+    {
+        title: 'Notifications',
+        href: '/inbox',
+        icon: Inbox
+    },
+    {
+        title: 'Chat',
+        href: '/#',
+        icon: MessageCircle
+    },
+    {
+        title: 'File Share',
+        href: '/#',
+        icon: FolderClosed
+    },
+    {
+        title: 'Calander',
+        href: '/#',
+        icon: CalendarDays
+    },
+    {
+        title: 'Planner',
+        href: '/#',
+        icon: Notebook
+    }
 ];
 
 const footerNavItems: NavItem[] = [

@@ -1,17 +1,21 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\EditPageController;
 use App\Http\Controllers\pageController;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\Team;
 
-
+//Unauthorised
 Route::get('/', [pageController::class,'index'])->name('home');
+Route::get('/contact', [ContactController::class, 'index'] )->name('contact');
 
-Route::get('/contact', function () {
-    dd('lets go!');
-});
+//Authorised 
+Route::get('/blogs', function () {
+    return Inertia::render('Blogs');
+})->middleware(['auth', 'verified'])->name('blogs');
 
 Route::get('/crm', function () {
     return Inertia::render('Crm');
