@@ -12,7 +12,10 @@ use App\Models\Team;
 Route::get('/', [pageController::class,'index'])->name('home');
 Route::get('/contact', [ContactController::class, 'index'] )->name('contact');
 
-//Authorised 
+//Authorised
+
+Route::post('/inbox', [ContactController::class,'store'])->middleware(['auth', 'verified'])->name('inbox');
+
 Route::get('/blogs', function () {
     return Inertia::render('Blogs');
 })->middleware(['auth', 'verified'])->name('blogs');
