@@ -74,6 +74,8 @@
                 background-color: oklch(0.145 0 0);
             }
         </style>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
         <title inertia>{{ config('app.name', 'Laravel') }}</title>
 

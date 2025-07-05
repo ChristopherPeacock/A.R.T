@@ -11,10 +11,10 @@ use App\Models\Team;
 //Unauthorised
 Route::get('/', [pageController::class,'index'])->name('home');
 Route::get('/contact', [ContactController::class, 'index'] )->name('contact');
+Route::post('/contact', [ContactController::class,'store'])->name('inboxContact');
 
 //Authorised
 
-Route::post('/inbox', [ContactController::class,'store'])->middleware(['auth', 'verified'])->name('inbox');
 
 Route::get('/blogs', function () {
     return Inertia::render('Blogs');

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('contacts_id')->nullable();
             $table->string('name');
             $table->foreignId('edit_pages_id')->nullable()->onDelete('cascade');
             $table->timestamps();

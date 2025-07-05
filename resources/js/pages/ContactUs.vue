@@ -2,25 +2,57 @@
 import { Head, Link, } from '@inertiajs/vue3';
 import { ref, onMounted } from 'vue';
 import NavBar from '@/components/navBar/NavBar.vue';
-import { reactive } from 'vue'
+import { reactive } from 'vue';
+import axios from 'axios';
+
 
 const props = defineProps({
     teamName: {
         type: String
     },
-})
+});
 
 const form = reactive({
   name: '',
   email: '',
-  company: '',
+  companyName: '',
   message: ''
-})
+});
 
 function submitForm() {
-  console.log('Form submitted:', form)
-  
+  const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+  fetch('/contact', {
+
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    'X-CSRF-TOKEN': csrfToken,
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      name: form.name,
+      email: form.email,
+      companyName: form.companyName,
+      message: form.message
+    })
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json(); // assuming you're returning JSON
+  })
+  .then(data => {
+    console.log('Success:', data);
+    // Optionally reset form or show success message
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
 }
+
+
 
 </script>
 <template>
@@ -39,25 +71,25 @@ function submitForm() {
         <form @submit.prevent="submitForm" class="space-y-4">
             <div>
                 <label for="name" class="block text-gray-700 mb-2 dark:text-gray-300">Name</label>
-                <input type="text" id="name" name="name" required
+                <input type="text" id="name" name="name" v-model="form.name" required
                 class="w-full p-3 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:text-white" />
             </div>
 
             <div>
                 <label for="email" class="block text-gray-700 mb-2 dark:text-gray-300">Email</label>
-                <input type="email" id="email" name="email" required
+                <input type="email" id="email" name="email" v-model="form.email" required
                 class="w-full p-3 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:text-white" />
             </div>
 
             <div>
                 <label for="company" class="block text-gray-700 mb-2 dark:text-gray-300">Company Name</label>
-                <input type="text" id="company" name="company"
+                <input type="text" id="company" name="company" v-model="form.companyName" required
                 class="w-full p-3 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:text-white" />
             </div>
 
             <div>
                 <label for="message" class="block text-gray-700 mb-2 dark:text-gray-300">Message</label>
-                <textarea id="message" name="message" rows="4" required
+                <textarea id="message" name="message" rows="4" v-model="form.message" required
                 class="w-full p-3 rounded bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 dark:bg-gray-800 dark:text-white"></textarea>
             </div>
 
@@ -70,7 +102,7 @@ function submitForm() {
 
   <!-- Contact Details & Map -->
   <div class="space-y-8">
-    
+
     <!-- Contact Details -->
     <div>
       <h3 class="text-xl font-semibold mb-6 text-gray-900, dark:text-white">Contact Details</h3>

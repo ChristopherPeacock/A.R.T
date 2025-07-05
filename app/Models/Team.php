@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use App\Models\User;
+use App\Models\EditPage;
+use App\Models\Contact;
+
 
 class Team extends Model
 {
@@ -28,6 +32,11 @@ class Team extends Model
     public function editPages(): HasOne
     {
         return $this->hasOne(EditPage::class);
+    }
+
+    public function contact(): HasMany
+    {
+        return $this->hasMany(Contact::class);
     }
 
 
