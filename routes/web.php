@@ -14,7 +14,7 @@ Route::get('/', [pageController::class,'index'])->name('home');
 Route::get('/contact', [ContactController::class, 'index'] )->name('contact');
 Route::post('/contact', [ContactController::class,'store'])->name('inboxContact');
 
-Route::get('/industries', function () {
+Route::get('/industries/cybersecurity', function () {
 
     $team = Team::where('id', 1)->first();
     $teamName = $team ? $team->name : 'Default Team';

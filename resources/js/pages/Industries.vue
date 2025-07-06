@@ -12,7 +12,15 @@ const props = defineProps({
 </script>
 
 <template>
-    <Head title="Cyber Security">
+    <Head title="Operational Resilience for Cyber Security | Invenode">
+        <meta name="description" content="Proactively protect your organization from cyber disruptions. Invenode empowers cyber security teams with complete visibility, critical dependency mapping, and advanced risk modeling to build true operational resilience and reduce downtime." />
+        <meta name="keywords" content="Operational Resilience, Cyber Security Resilience, Cyber Risk Management, Business Continuity, Critical Dependency Mapping, Risk Modeling, Downtime Prevention, Invenode, Cybersecurity Disruption Protection" />
+        <meta property="og:title" content="Operational Resilience for Cyber Security | Invenode" />
+        <meta property="og:description" content="See how Invenode helps cyber security leaders strengthen operations, map vulnerabilities, and prevent cyber-related disruptions." />
+        <meta property="og:image" content="/images/invenode-cyber-resilience.jpg" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://yourdomain.com/industries/cyber-security" />
+
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     </Head>
