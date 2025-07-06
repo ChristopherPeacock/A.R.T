@@ -10,12 +10,22 @@ use App\Models\Team;
 
 //Unauthorised
 Route::get('/', [pageController::class,'index'])->name('home');
+
 Route::get('/contact', [ContactController::class, 'index'] )->name('contact');
 Route::post('/contact', [ContactController::class,'store'])->name('inboxContact');
 
+Route::get('/industries', function () {
+
+    $team = Team::where('id', 1)->first();
+    $teamName = $team ? $team->name : 'Default Team';
+
+    return Inertia::render('Industries', [
+        'teamName'=> $teamName,
+    ]);
+
+})->name('industries');
+
 //Authorised
-
-
 Route::get('/blogs', function () {
     return Inertia::render('Blogs');
 })->middleware(['auth', 'verified'])->name('blogs');

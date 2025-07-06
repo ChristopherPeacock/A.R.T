@@ -174,13 +174,13 @@ onUnmounted(() => {
         </div>
 
         <!-- Slide Indicators -->
-        <div class="flex justify-center mt-8 gap-3">
+        <div class="flex justify-center mt-8 gap-4">
           <button
             v-for="(feature, index) in features"
             :key="feature.id"
             @click="goToSlide(index)"
             :class="[
-              'px-4 py-2 rounded-full text-sm font-medium transition-all duration-200',
+              'px-4 py-2 rounded-sm text-sm font-medium transition-all duration-200',
               index === currentSlide
                 ? 'bg-green-600 text-white shadow-lg transform scale-105'
                 : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600',
