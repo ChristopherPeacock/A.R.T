@@ -7,6 +7,7 @@ import WhyChoseUs from '@/components/welcome/WhyChoseUs.vue';
 import Benefits from '@/components/welcome/Benefits.vue';
 import FinalCallToAction from '@/components/welcome/FinalCallToAction.vue';
 import Support from '@/components/welcome/Support.vue';
+import HowItWorks from '@/components/welcome/HowItWorks.vue';
 
 const props = defineProps({
     teamName: {
@@ -45,6 +46,7 @@ function toggleDarkMode() {
     <div class=" flex flex-col min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-slate-900 dark:to-slate-900 transition-all duration-500">
          <NavBar :teamName="props.teamName" @toggleDarkMode="toggleDarkMode" :isDark="isDark" />
          <Hero />
+         <HowItWorks />
          <Benefits />
          <WhyChoseUs />
          <FinalCallToAction  />
