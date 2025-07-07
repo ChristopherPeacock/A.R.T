@@ -42,6 +42,7 @@ function toggleDarkMode() {
                         <div>
                             <Link href="/" class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium">Welcome</Link>
                         </div>
+
                         <div class="relative group">
                             <button class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium">
                                 Industries
@@ -52,8 +53,8 @@ function toggleDarkMode() {
 
                             <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all z-10">
                                 <Link href="/industries/cybersecurity" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Cyber Security</Link>
-                                <Link href="/industries/operational-resilience-utilities" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Utilities & OES</Link>
-                                <Link href="/industries/financial-services" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Financial Services</Link>
+                                <Link href="/industries/utilities&oes" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Utilities & OES</Link>
+                                <Link href="/industries/Manufacturing" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Manufacturing</Link>
                             </div>
                         </div>
                         <div class="relative group">
@@ -67,6 +68,19 @@ function toggleDarkMode() {
                             <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all z-10">
                                 <Link href="/industries/blog" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Blogs</Link>
                                 <Link href="/industries/whitepaper" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">White Paper</Link>
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <button class="flex items-center gap-1 text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 font-medium">
+                                About Us
+                                <svg class="w-4 h-4 transform group-hover:rotate-180 transition" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+
+                            <div class="absolute left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transform scale-95 group-hover:scale-100 transition-all z-10">
+                                <Link href="/industries/cybersecurity" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Contact Us</Link>
+                                <Link href="/industries/operational-resilience-utilities" class="block px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Career</Link>
                             </div>
                         </div>
                     </div>

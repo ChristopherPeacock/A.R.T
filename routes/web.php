@@ -19,11 +19,24 @@ Route::get('/industries/cybersecurity', function () {
     $team = Team::where('id', 1)->first();
     $teamName = $team ? $team->name : 'Default Team';
 
-    return Inertia::render('Industries', [
+    return Inertia::render('CyberSecurity', [
         'teamName'=> $teamName,
     ]);
 
-})->name('industries');
+})->name('industriesCyberSecurity');
+
+Route::get('/industries/utilities&oes', function () {
+
+    $team = Team::where('id', 1)->first();
+    $teamName = $team ? $team->name : 'Default Team';
+
+    return Inertia::render('CyberSecurity', [
+        'teamName'=> $teamName,
+    ]);
+
+})->name('industries/utilities&oes');
+
+
 
 //Authorised
 Route::get('/blogs', function () {
