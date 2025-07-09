@@ -5,7 +5,6 @@ import NavBar from '@/components/navBar/NavBar.vue';
 import { reactive } from 'vue';
 import axios from 'axios';
 
-
 const props = defineProps({
     teamName: {
         type: String

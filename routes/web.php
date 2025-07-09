@@ -30,13 +30,22 @@ Route::get('/industries/utilities&oes', function () {
     $team = Team::where('id', 1)->first();
     $teamName = $team ? $team->name : 'Default Team';
 
-    return Inertia::render('CyberSecurity', [
+    return Inertia::render('Utlities', [
         'teamName'=> $teamName,
     ]);
 
 })->name('industries/utilities&oes');
 
+Route::get('/industries/Manufacturing', function () {
 
+    $team = Team::where('id', 1)->first();
+    $teamName = $team ? $team->name : 'Default Team';
+
+    return Inertia::render('Manufacturing', [
+        'teamName'=> $teamName,
+    ]);
+
+})->name('industries/Manufacturing');
 
 //Authorised
 Route::get('/blogs', function () {
